@@ -1,105 +1,95 @@
+import React from "react";
 import Card from "components/card";
 import CardMenu from "components/card/CardMenu";
 import Switch from "components/switch";
-import React from "react";
+
+import {
+  MdComment,
+  MdStarRate,
+  MdPeople,
+  MdBusiness,
+  MdLaunch,
+  MdUpdate,
+  MdMailOutline,
+  MdPersonAdd,
+} from "react-icons/md";
+
+const notifications = [
+  {
+    id: "switch1",
+    label: "Item comment notifications",
+    icon: <MdComment className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch2",
+    label: "Buyer review notifications",
+    icon: <MdStarRate className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch3",
+    label: "Rating reminders notifications",
+    icon: <MdStarRate className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch4",
+    label: "Meetups near you notifications",
+    icon: <MdPeople className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch5",
+    label: "Company news notifications",
+    icon: <MdBusiness className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch6",
+    label: "New launches and projects",
+    icon: <MdLaunch className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch7",
+    label: "Monthly product changes",
+    icon: <MdUpdate className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch8",
+    label: "Subscribe to newsletter",
+    icon: <MdMailOutline className="text-red-500 w-6 h-6" />,
+  },
+  {
+    id: "switch9",
+    label: "Email me when someone follows me",
+    icon: <MdPersonAdd className="text-red-500 w-6 h-6" />,
+  },
+];
 
 function Notification() {
   return (
-    <Card extra={"w-full h-full p-3"}>
-      <div className="relative mb-3 flex items-center justify-between pt-1">
-        <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+    <Card extra="w-full h-full p-6 bg-white dark:bg-navy-800 shadow-lg rounded-2xl">
+      <div className="relative mb-6 flex items-center justify-between border-b border-red-200 pb-3">
+        <h4 className="text-2xl font-extrabold text-red-600 dark:text-red-400">
           Notifications
         </h4>
         <CardMenu />
       </div>
-      <div className="flex flex-col">
-        {/* the custom checkbox desing added in src/index.js */}
-        <div className="mt-3 flex items-center gap-3">
-          <Switch id="switch1" />
-          <label
-            for="checkbox1"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            Item comment notifications
-          </label>
-        </div>
 
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch2" />
+      <div className="flex flex-col space-y-5">
+        {notifications.map(({ id, label, icon }) => (
           <label
-            for="checkbox2"
-            className="text-base font-medium text-navy-700 dark:text-white"
+            key={id}
+            htmlFor={id}
+            className="flex cursor-pointer items-center gap-4 rounded-lg border border-red-300 bg-red-50 p-4 shadow-sm transition hover:bg-red-100 dark:bg-navy-700 dark:border-red-700 dark:hover:bg-navy-600"
           >
-            Buyer review notifications
-          </label>
-        </div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-400">
+              {icon}
+            </div>
 
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch3" />
-          <label
-            for="checkbox3"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            Rating reminders notifications
-          </label>
-        </div>
+            <span className="flex-1 text-lg font-semibold text-red-700 dark:text-red-300">
+              {label}
+            </span>
 
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch4" />
-          <label
-            for="checkbox4"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            Meetups near you notifications
+            <Switch id={id} />
           </label>
-        </div>
-
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch5" />
-          <label
-            for="checkbox5"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            Company news notifications
-          </label>
-        </div>
-
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch6" />
-          <label
-            for="checkbox6"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            New launches and projects
-          </label>
-        </div>
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch7" />
-          <label
-            for="checkbox7"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            Monthly product changes
-          </label>
-        </div>
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch8" />
-          <label
-            for="checkbox8"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            Subscribe to newsletter
-          </label>
-        </div>
-        <div className="mt-4 flex items-center gap-3">
-          <Switch id="switch8" />
-          <label
-            for="checkbox8"
-            className="text-base font-medium text-navy-700 dark:text-white"
-          >
-            Email me when someone follows me
-          </label>
-        </div>
+        ))}
       </div>
     </Card>
   );

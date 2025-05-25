@@ -1,68 +1,125 @@
-import Card from "components/card";
 import React from "react";
+import Card from "components/card";
+import {
+  MdLocalHospital,
+  MdLocationOn,
+  MdPhone,
+  MdDateRange,
+  MdEmail,
+  MdAccessTime,
+  MdWeb,
+  MdPeople,
+  MdEmergency,
+} from "react-icons/md";
+import { FaBuilding} from "react-icons/fa";
 
-const General = () => {
+const hospitalDetails = [
+  {
+    label: "Hospital Name",
+    value: "CareWell Medical Center",
+    icon: <MdLocalHospital className="text-red-600 dark:text-red-400 w-6 h-6" />,
+  },
+  {
+    label: "Main Branch Location",
+    value: "123 Health St, New York, NY",
+    icon: <MdLocationOn className="text-green-600 dark:text-green-400 w-6 h-6" />,
+  },
+  {
+    label: "Phone Number",
+    value: "+1 (555) 123-4567",
+    icon: <MdPhone className="text-blue-600 dark:text-blue-400 w-6 h-6" />,
+  },
+  {
+    label: "Email",
+    value: "contact@carewell.com",
+    icon: <MdEmail className="text-indigo-600 dark:text-indigo-400 w-6 h-6" />,
+  },
+  {
+    label: "Established",
+    value: "15 March 1998",
+    icon: <MdDateRange className="text-purple-600 dark:text-purple-400 w-6 h-6" />,
+  },
+  {
+    label: "Number of Branches",
+    value: "5",
+    icon: <FaBuilding className="text-yellow-600 dark:text-yellow-400 w-6 h-6" />,
+  },
+  {
+    label: "Doctors & Staff",
+    value: "120 Doctors, 250 Staff",
+    icon: <MdPeople className="text-cyan-600 dark:text-cyan-400 w-6 h-6" />,
+  },
+  {
+    label: "Emergency Services",
+    value: "Available 24/7",
+    icon: <MdEmergency className="text-red-700 dark:text-red-500 w-6 h-6" />,
+  },
+  {
+    label: "Operating Hours",
+    value: "Mon - Sat: 8 AM - 8 PM",
+    icon: <MdAccessTime className="text-teal-600 dark:text-teal-400 w-6 h-6" />,
+  },
+  {
+    label: "Website",
+    value: (
+      <a
+        href="https://www.carewell.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-brand-500 hover:underline"
+      >
+        www.carewell.com
+      </a>
+    ),
+    icon: <MdWeb className="text-green-700 dark:text-green-400 w-6 h-6" />,
+  },
+];
+
+const hospitalDescription = `CareWell Medical Center is committed to providing exceptional healthcare services with compassion and innovation.
+Our mission is to improve the health and well-being of the communities we serve through comprehensive care, research, and education.`;
+
+const HospitalInfo = () => {
   return (
-    <Card extra={"w-full h-full p-3"}>
+    <Card extra={"w-full h-full p-4"}>
       {/* Header */}
-      <div className="mt-2 mb-8 w-full">
-        <h4 className="px-2 text-xl font-bold text-navy-700 dark:text-white">
-          General Information
+      <div className="mb-6 w-full">
+        <h4 className="text-xl font-bold text-navy-700 dark:text-white px-2">
+          Hospital Information
         </h4>
-        <p className="mt-2 px-2 text-base text-gray-600">
-          As we live, our hearts turn colder. Cause pain is what we go through
-          as we become older. We get insulted by others, lose trust for those
-          others. We get back stabbed by friends. It becomes harder for us to
-          give others a hand. We get our heart broken by people we love, even
-          that we give them all...
+        <p className="mt-2 px-2 text-base text-gray-600 dark:text-gray-300">
+          Details about the hospital and its branches for administrative overview.
         </p>
       </div>
-      {/* Cards */}
-      <div className="grid grid-cols-2 gap-4 px-2">
-        <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-          <p className="text-sm text-gray-600">Education</p>
-          <p className="text-base font-medium text-navy-700 dark:text-white">
-            Stanford University
-          </p>
-        </div>
 
-        <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-          <p className="text-sm text-gray-600">Languages</p>
-          <p className="text-base font-medium text-navy-700 dark:text-white">
-            English, Spanish, Italian
-          </p>
-        </div>
+      {/* Info Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 px-2">
+        {hospitalDetails.map(({ label, value, icon }) => (
+          <div
+            key={label}
+            className="flex items-center gap-4 rounded-2xl bg-white shadow-md p-4 dark:bg-navy-700 dark:shadow-none"
+          >
+            <div className="rounded-full bg-gray-100 p-2 dark:bg-navy-800">
+              {icon}
+            </div>
+            <div>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{label}</p>
+              <p className="text-base font-semibold text-navy-700 dark:text-white">
+                {value}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-        <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-          <p className="text-sm text-gray-600">Department</p>
-          <p className="text-base font-medium text-navy-700 dark:text-white">
-            Product Design
-          </p>
-        </div>
-
-        <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-          <p className="text-sm text-gray-600">Work History</p>
-          <p className="text-base font-medium text-navy-700 dark:text-white">
-            English, Spanish, Italian
-          </p>
-        </div>
-
-        <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-          <p className="text-sm text-gray-600">Organization</p>
-          <p className="text-base font-medium text-navy-700 dark:text-white">
-            Simmmple Web LLC
-          </p>
-        </div>
-
-        <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-          <p className="text-sm text-gray-600">Birthday</p>
-          <p className="text-base font-medium text-navy-700 dark:text-white">
-            20 July 1986
-          </p>
-        </div>
+      {/* Description */}
+      <div className="mt-8 px-2">
+        <h5 className="text-lg font-semibold text-navy-700 dark:text-white mb-2">
+          About Us
+        </h5>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{hospitalDescription}</p>
       </div>
     </Card>
   );
 };
 
-export default General;
+export default HospitalInfo;

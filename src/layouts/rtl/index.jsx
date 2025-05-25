@@ -1,96 +1,129 @@
 import React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Navbar from "components/navbar/RTL";
-import Sidebar from "components/sidebar/RTL";
-import Footer from "components/footer/Footer";
-import routes from "routes.js";
+import { Switch } from "@headlessui/react";
+import {
+  MdOutlineEmail,
+  MdLock,
+  MdNotifications,
+  MdPerson,
+  MdLocalHospital,
+  MdCampaign,
+} from "react-icons/md";
 
-export default function RTL(props) {
-  const { ...rest } = props;
-  const location = useLocation();
-  const [open, setOpen] = React.useState(true);
-  const [currentRoute, setCurrentRoute] = React.useState("Main Dashboard");
+const HospitalSettings = () => {
+  const [emailNotifications, setEmailNotifications] = React.useState(true);
+  const [darkMode, setDarkMode] = React.useState(false);
 
-  React.useEffect(() => {
-    window.addEventListener("resize", () =>
-      window.innerWidth < 1200 ? setOpen(false) : setOpen(true)
-    );
-  }, []);
-  React.useEffect(() => {
-    getActiveRoute(routes);
-  }, [location.pathname]);
-
-  const getActiveRoute = (routes) => {
-    let activeRoute = "RTL";
-    for (let i = 0; i < routes.length; i++) {
-      if (
-        window.location.href.indexOf(
-          routes[i].layout + "/" + routes[i].path
-        ) !== -1
-      ) {
-        setCurrentRoute(routes[i].name);
-      }
-    }
-    return activeRoute;
-  };
-  const getActiveNavbar = (routes) => {
-    let activeNavbar = false;
-    for (let i = 0; i < routes.length; i++) {
-      if (
-        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
-      ) {
-        return routes[i].secondary;
-      }
-    }
-    return activeNavbar;
-  };
-  const getRoutes = (routes) => {
-    return routes.map((prop, key) => {
-      if (prop.layout === "/rtl") {
-        return (
-          <Route path={`/${prop.path}`} element={prop.component} key={key} />
-        );
-      } else {
-        return null;
-      }
-    });
-  };
-
-  document.documentElement.dir = "rtl";
   return (
-    <div className="flex h-full w-full">
-      <Sidebar open={open} onClose={() => setOpen(false)} />
-      {/* Navbar & Main Content */}
-      <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
-        {/* Main Content */}
-        <main
-          className={`mx-[12px] h-full flex-none transition-all md:pe-2 xl:mr-[313px]`}
-        >
-          {/* Routes */}
-          <div className="h-full">
-            <Navbar
-              onOpenSidenav={() => setOpen(true)}
-              logoText={"Horizon UI Tailwind React"}
-              brandText={currentRoute}
-              secondary={getActiveNavbar(routes)}
-              {...rest}
-            />
-            <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
-              <Routes>
-                {getRoutes(routes)}
+    <div className="p-4 md:p-8 w-full">
+      <h2 className="text-3xl font-bold text-blue-800 mb-6">Hospital Settings</h2>
 
-                <Route
-                  path="/"
-                  element={<Navigate to="/admin/default" replace />}
-                />
-              </Routes>
-            </div>
-            <div className="p-3">
-              <Footer />
-            </div>
-          </div>
-        </main>
+      {/* Profile Section */}
+      <div className="bg-white shadow-md rounded-xl p-6 mb-8">
+        <div className="flex items-center gap-2 text-blue-700 mb-4">
+          <MdPerson className="h-6 w-6" />
+          <h3 className="text-xl font-semibold">Admin Profile</h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input className="p-3 border rounded-lg" placeholder="Full Name" />
+          <input className="p-3 border rounded-lg" placeholder="Email Address" />
+          <input className="p-3 border rounded-lg" placeholder="Phone Number" />
+          <input className="p-3 border rounded-lg" placeholder="Designation" />
+        </div>
+      </div>
+
+      {/* Hospital Info Section */}
+      <div className="bg-white shadow-md rounded-xl p-6 mb-8">
+        <div className="flex items-center gap-2 text-blue-700 mb-4">
+          <MdLocalHospital className="h-6 w-6" />
+          <h3 className="text-xl font-semibold">Hospital Information</h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input className="p-3 border rounded-lg" placeholder="Hospital Name" />
+          <input className="p-3 border rounded-lg" placeholder="Registration Number" />
+          <input className="p-3 border rounded-lg" placeholder="Address" />
+          <input className="p-3 border rounded-lg" placeholder="Emergency Contact" />
+        </div>
+      </div>
+
+      {/* Notifications */}
+      <div className="bg-white shadow-md rounded-xl p-6 mb-8">
+        <div className="flex items-center gap-2 text-blue-700 mb-4">
+          <MdNotifications className="h-6 w-6" />
+          <h3 className="text-xl font-semibold">Notifications</h3>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-gray-700">Email Notifications</span>
+          <Switch
+            checked={emailNotifications}
+            onChange={setEmailNotifications}
+            className={`${
+              emailNotifications ? "bg-blue-600" : "bg-gray-300"
+            } relative inline-flex h-6 w-11 items-center rounded-full`}
+          >
+            <span
+              className={`${
+                emailNotifications ? "translate-x-6" : "translate-x-1"
+              } inline-block h-4 w-4 transform bg-white rounded-full transition`}
+            />
+          </Switch>
+        </div>
+      </div>
+
+      {/* Appearance */}
+      <div className="bg-white shadow-md rounded-xl p-6 mb-8">
+        <div className="flex items-center gap-2 text-blue-700 mb-4">
+          <MdOutlineEmail className="h-6 w-6" />
+          <h3 className="text-xl font-semibold">Appearance</h3>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-gray-700">Dark Mode</span>
+          <Switch
+            checked={darkMode}
+            onChange={setDarkMode}
+            className={`${
+              darkMode ? "bg-blue-600" : "bg-gray-300"
+            } relative inline-flex h-6 w-11 items-center rounded-full`}
+          >
+            <span
+              className={`${
+                darkMode ? "translate-x-6" : "translate-x-1"
+              } inline-block h-4 w-4 transform bg-white rounded-full transition`}
+            />
+          </Switch>
+        </div>
+      </div>
+
+      {/* Account Security */}
+      <div className="bg-white shadow-md rounded-xl p-6 mb-8">
+        <div className="flex items-center gap-2 text-blue-700 mb-4">
+          <MdLock className="h-6 w-6" />
+          <h3 className="text-xl font-semibold">Account Security</h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input className="p-3 border rounded-lg" type="password" placeholder="Current Password" />
+          <input className="p-3 border rounded-lg" type="password" placeholder="New Password" />
+        </div>
+        <button className="mt-4 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition">
+          Update Password
+        </button>
+      </div>
+
+      {/* Notices */}
+      <div className="bg-white shadow-md rounded-xl p-6">
+        <div className="flex items-center gap-2 text-blue-700 mb-4">
+          <MdCampaign className="h-6 w-6" />
+          <h3 className="text-xl font-semibold">Announcements & Notices</h3>
+        </div>
+        <textarea
+          className="w-full p-4 border rounded-lg h-32 resize-none"
+          placeholder="Write internal notices or announcements here..."
+        ></textarea>
+        <button className="mt-4 bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
+          Post Notice
+        </button>
       </div>
     </div>
   );
-}
+};
+
+export default HospitalSettings;

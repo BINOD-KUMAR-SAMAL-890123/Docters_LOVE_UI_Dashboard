@@ -1,99 +1,67 @@
 import React from "react";
-import { MdModeEditOutline } from "react-icons/md";
-import image1 from "assets/img/profile/image1.png";
-import image2 from "assets/img/profile/image2.png";
-import image3 from "assets/img/profile/image3.png";
+import { MdEdit, MdAnnouncement } from "react-icons/md";
 import Card from "components/card";
 
-const Project = () => {
+const notices = [
+  {
+    id: 1,
+    title: "New COVID-19 Safety Protocols",
+    description: "Please review the updated COVID-19 safety protocols effective from next Monday.",
+    date: "May 25, 2025",
+  },
+  {
+    id: 2,
+    title: "Staff Meeting Reminder",
+    description: "All hospital staff are requested to attend the quarterly meeting in Conference Room B.",
+    date: "May 28, 2025",
+  },
+  {
+    id: 3,
+    title: "New Medical Equipment Arrival",
+    description: "The latest MRI machines have arrived and will be installed next week in Radiology.",
+    date: "June 1, 2025",
+  },
+  {
+    id: 4,
+    title: "New Medical Equipment Arrival",
+    description: "The latest MRI machines have arrived and will be installed next week in Radiology.",
+    date: "June 1, 2025",
+  },
+];
+
+const Notices = () => {
   return (
-    <Card extra={"w-full p-4 h-full"}>
-      <div className="mb-8 w-full">
-        <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-          All projects
+    <Card extra="w-full p-6 h-full bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-navy-800 dark:to-navy-900 shadow-lg">
+      <div className="mb-8 w-full flex items-center space-x-3">
+        <MdAnnouncement className="text-indigo-600 dark:text-indigo-400 text-3xl" />
+        <h4 className="text-2xl font-bold text-indigo-900 dark:text-indigo-300">
+          Notices & Announcements
         </h4>
-        <p className="mt-2 text-base text-gray-600">
-          Here you can find more details about your projects. Keep you user
-          engaged by providing meaningful information.
-        </p>
       </div>
-      {/* Project 1 */}
-      <div className="flex w-full items-center justify-between rounded-2xl bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-        <div className="flex items-center">
-          <div className="">
-            <img className="h-[83px] w-[83px] rounded-lg" src={image1} alt="" />
+      <p className="mb-6 text-gray-700 dark:text-gray-300">
+        Stay updated with the latest hospital news and announcements to ensure smooth operations.
+      </p>
+
+      {notices.map(({ id, title, description, date }) => (
+        <div
+          key={id}
+          className="mb-5 flex w-full items-center justify-between rounded-xl bg-white dark:bg-navy-700 p-5 shadow-md hover:shadow-indigo-400/40 transition-shadow duration-300"
+        >
+          <div className="flex flex-col">
+            <h5 className="text-lg font-semibold text-indigo-900 dark:text-indigo-200">{title}</h5>
+            <p className="mt-1 text-gray-600 dark:text-gray-400">{description}</p>
+            <span className="mt-2 text-xs italic text-indigo-500 dark:text-indigo-300">{date}</span>
           </div>
-          <div className="ml-4">
-            <p className="text-base font-medium text-navy-700 dark:text-white">
-              Technology behind the Blockchain
-            </p>
-            <p className="mt-2 text-sm text-gray-600">
-              Project #1 .
-              <a
-                className="ml-1 font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-                href=" "
-              >
-                See product details
-              </a>
-            </p>
-          </div>
+          <button
+            aria-label="Edit notice"
+            className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-200 transition"
+          >
+            <MdEdit size={26} />
+          </button>
         </div>
-        <div className="mr-4 flex items-center justify-center text-gray-600 dark:text-white">
-          <MdModeEditOutline />
-        </div>
-      </div>
-      {/* Project 1 */}
-      <div className="mt-3 flex w-full items-center justify-between rounded-2xl bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-        <div className="flex items-center">
-          <div className="">
-            <img className="h-[83px] w-[83px] rounded-lg" src={image3} alt="" />
-          </div>
-          <div className="ml-4">
-            <p className="text-base font-medium text-navy-700 dark:text-white">
-              Technology behind the Blockchain
-            </p>
-            <p className="mt-2 text-sm text-gray-600">
-              Project #1 .
-              <a
-                className="ml-1 font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-                href=" "
-              >
-                See product details
-              </a>
-            </p>
-          </div>
-        </div>
-        <div className="mr-4 flex items-center justify-center text-gray-600 dark:text-white">
-          <MdModeEditOutline />
-        </div>
-      </div>
-      {/* Project 1 */}
-      <div className="mt-3 flex w-full items-center justify-between rounded-2xl bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-        <div className="flex items-center">
-          <div className="">
-            <img className="h-[83px] w-[83px] rounded-lg" src={image2} alt="" />
-          </div>
-          <div className="ml-4">
-            <p className="text-base font-medium text-navy-700 dark:text-white">
-              Technology behind the Blockchain
-            </p>
-            <p className="mt-2 text-sm text-gray-600">
-              Project #1 .
-              <a
-                className="ml-1 font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-                href=" "
-              >
-                See product details
-              </a>
-            </p>
-          </div>
-        </div>
-        <div className="mr-4 flex items-center justify-center text-gray-600 dark:text-white">
-          <MdModeEditOutline />
-        </div>
-      </div>
+      ))}
     </Card>
   );
 };
 
-export default Project;
+export default Notices;

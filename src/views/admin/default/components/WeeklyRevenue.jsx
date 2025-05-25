@@ -1,33 +1,70 @@
-import Card from "components/card";
-import BarChart from "components/charts/BarChart";
+import React from "react";
 import {
-  barChartDataWeeklyRevenue,
-  barChartOptionsWeeklyRevenue,
-} from "variables/charts";
-import { MdBarChart } from "react-icons/md";
+  HeartIcon,
+  UserGroupIcon,
+  ShieldCheckIcon,
+  PhoneIcon,
+  ClockIcon,
+} from "@heroicons/react/24/solid";
+import DoctorImg from "assets/img/dashboards/2151644072-removebg-preview.png";
 
-const WeeklyRevenue = () => {
+const DoctorEmergencyCard = () => {
   return (
-    <Card extra="flex flex-col bg-white w-full rounded-3xl py-6 px-2 text-center">
-      <div className="mb-auto flex items-center justify-between px-6">
-        <h2 className="text-lg font-bold text-navy-700 dark:text-white">
-          Weekly Revenue
-        </h2>
-        <button className="!linear z-[1] flex items-center justify-center rounded-lg bg-lightPrimary p-2 text-brand-500 !transition !duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10">
-          <MdBarChart className="h-6 w-6" />
-        </button>
+    <div className="rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white p-6 sm:p-8 md:p-10 shadow-xl flex flex-col justify-between max-w-full">
+      {/* Title */}
+      <div className="text-xl sm:text-2xl md:text-3xl font-bold leading-snug mb-4">
+        Emergency? <br />
+        The world’s easiest way <br />
+        to find a doctor.
       </div>
 
-      <div className="md:mt-16 lg:mt-0">
-        <div className="h-[250px] w-full xl:h-[350px]">
-          <BarChart
-            chartData={barChartDataWeeklyRevenue}
-            chartOptions={barChartOptionsWeeklyRevenue}
-          />
+      {/* Description */}
+      <div className="text-sm sm:text-base font-medium leading-relaxed mb-6 max-w-xl">
+        Our doctors don’t just treat symptoms — they care deeply about your well-being.
+        With love, trust, and dedication, they provide personalized care tailored just for you.
+        Access quality healthcare from anywhere, anytime.
+      </div>
+
+      {/* Features section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div className="flex items-center space-x-2">
+          <HeartIcon className="h-6 w-6 text-blue-200" />
+          <span className="text-sm sm:text-base">Compassionate Care</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <UserGroupIcon className="h-6 w-6 text-blue-200" />
+          <span className="text-sm sm:text-base">Trusted Experts</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <ShieldCheckIcon className="h-6 w-6 text-blue-200" />
+          <span className="text-sm sm:text-base">Certified & Reliable</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <ClockIcon className="h-6 w-6 text-blue-200" />
+          <span className="text-sm sm:text-base">24/7 Availability</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <PhoneIcon className="h-6 w-6 text-blue-200" />
+          <span className="text-sm sm:text-base">Emergency Hotlines</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <ShieldCheckIcon className="h-6 w-6 text-blue-200" />
+          <span className="text-sm sm:text-base">Data Privacy Secured</span>
         </div>
       </div>
-    </Card>
+
+      {/* Doctor Image */}
+      <div className="flex justify-center mt-4">
+        <img
+          src={DoctorImg}
+          alt="Doctor Illustration"
+          width={280}
+          height={300}
+          className="object-contain rounded-lg max-w-full h-auto"
+        />
+      </div>
+    </div>
   );
 };
 
-export default WeeklyRevenue;
+export default DoctorEmergencyCard;

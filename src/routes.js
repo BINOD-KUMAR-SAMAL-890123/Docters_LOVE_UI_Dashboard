@@ -1,23 +1,19 @@
 import React from "react";
 
-// Admin Imports
 import MainDashboard from "views/admin/default";
 import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import DataTables from "views/admin/tables";
-import RTLDefault from "views/rtl/default";
+import RTLDefault from "./layouts/rtl/index";
+import { FaUserMd } from "react-icons/fa";
+import { MdSettings } from "react-icons/md";
+import Appointments from "./views/admin/appointments/appointments";
 
-// Auth Imports
 import SignIn from "views/auth/SignIn";
 
-// Icon Imports
-import {
-  MdHome,
-  MdOutlineShoppingCart,
-  MdBarChart,
-  MdPerson,
-  MdLock,
-} from "react-icons/md";
+import { MdHome, MdBarChart, MdPerson, MdLock } from "react-icons/md";
+import { FaCalendarAlt } from "react-icons/fa";
+
 
 const routes = [
   {
@@ -28,22 +24,30 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: "NFT Marketplace",
+    name: "Doctors",
     layout: "/admin",
     path: "nft-marketplace",
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
+    icon: <FaUserMd className="h-6 w-6" />,
     component: <NFTMarketplace />,
     secondary: true,
   },
   {
-    name: "Data Tables",
+    name: "Appointments",
+    layout: "/admin",
+    path: "appoints",
+    icon: <FaCalendarAlt className="h-6 w-6" />, 
+    component: <Appointments />,
+    secondary: true,
+  },
+  {
+    name: "Patients Data",
     layout: "/admin",
     icon: <MdBarChart className="h-6 w-6" />,
     path: "data-tables",
     component: <DataTables />,
   },
   {
-    name: "Profile",
+    name: "Hospital Profile",
     layout: "/admin",
     path: "profile",
     icon: <MdPerson className="h-6 w-6" />,
@@ -57,10 +61,10 @@ const routes = [
     component: <SignIn />,
   },
   {
-    name: "RTL Admin",
+    name: "Hospital Settings",
     layout: "/rtl",
-    path: "rtl",
-    icon: <MdHome className="h-6 w-6" />,
+    path: "hospital-settings",
+    icon: <MdSettings className="h-6 w-6" />,
     component: <RTLDefault />,
   },
 ];
