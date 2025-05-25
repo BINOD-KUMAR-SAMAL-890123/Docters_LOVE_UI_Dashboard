@@ -1,103 +1,54 @@
-
-
-![version](https://img.shields.io/badge/version-2.0.0-brightgreen.svg)
+![version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
-[![GitHub issues open](https://img.shields.io/github/issues/horizon-ui/horizon-tailwind-react.svg?maxAge=2592000)](https://github.com/horizon-ui/horizon-tailwind-react/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub issues open](https://img.shields.io/github/issues/BINOD-KUMAR-SAMAL-890123/Docters_LOVE_UI_Dashboard.svg?maxAge=2592000)](https://github.com/BINOD-KUMAR-SAMAL-890123/Docters_LOVE_UI_Dashboard/issues?q=is%3Aopen+is%3Aissue)
 
 <p>&nbsp;</p>
 
-[<img alt="Horizon UI - Tailwind CSS React Admin dashboard template" src="https://i.ibb.co/1zhBQ2J/horizon-ui-tailwind-2.png" />](https://github.com/horizon-ui/horizon-tailwind-react)
+[<img alt="Doctors LOVE UI Dashboard" src="https://i.ibb.co/VWyD9sp/doctor-dashboard-banner.png" />](https://github.com/BINOD-KUMAR-SAMAL-890123/Docters_LOVE_UI_Dashboard)
 
 <p>&nbsp;</p>
 
-Get started and build your dream web app with Horizon UI, the trendiest & innovative Open Source Admin Template for Tailwind CSS & React!
+Start building modern, responsive hospital dashboards and healthcare UIs with **Doctors LOVE UI Dashboard**, a beautifully designed React + Tailwind CSS admin panel made for hospitals, clinics, and patient management.
 
 ---
 
-### Introduction
+### 🩺 Introduction
 
-Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, Horizon UI is ready to help you create stunning websites and webapps.
+Doctors LOVE UI is a modern and elegant admin dashboard template tailored for medical and healthcare institutions. It's fully responsive and comes with beautiful components, reusable layouts, and real-life dashboard features for hospital and clinic management systems.
 
-Save hundreds of hours trying to create and develop a dashboard from scratch.
-The fastest, most responsive & trendiest dashboard for Tailwind CSS is here. Seriously.
-
-With Horizon UI you will find many examples for pages like NFTs Pages,
-Authentication Pages, Profile and so on. Just choose between a Basic Design or a cover and you are good to go!
-
-### 🎉 [NEW] Horizon UI Components
-
-All the main components from both versions, this will help you to see and interact with all & the latest added components of Horizon (also, new components are on the way, stay tuned)! ⚡️
-<a href="https://horizon-ui.com/components/?ref=readme-horizon-tailwind-react" target="_blank">See all components</a>
-
-### Documentation
-
-Each element is well presented in a very complex documentation. You can read more about the <a href="https://horizon-ui.com/docs-tailwind/docs/react/installation?ref=readme-horizon-tailwind-react" target="_blank">documentation here.</a>
-
-### Quick Start
-
-Install Horizon UI by running either of the following:
-
-- Install NodeJS LTS from [NodeJs Official Page](https://nodejs.org/en/?ref=horizon-documentation) (NOTE: Product only works with LTS version).
-
-Clone the repository with the following command:
-
-```bash
-git clone https://github.com/horizon-ui/horizon-tailwind-react.git
-```
-
-Run in terminal this command:
-
-```bash
-npm install
-```
-
-Then run this command to start your local server
-
-```bash
-npm start
-```
-
-### Example Pages
-
-If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages. You will be able to quickly set up the basic structure for your web project.
-
-View <a href="https://horizon-ui.com/horizon-tailwind-react/?ref=readme-horizon-tailwind-react" target="_blank">example pages here.</a>
-
-### Versions
-
-| Free Version                                                                                                                                          | PRO Version                                                                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Horizon UI Tailwind CSS React](https://i.ibb.co/1zhBQ2J/horizon-ui-tailwind-2.png)](https://www.horizon-ui.com/?ref=readme-horizon-tailwind-react) | [![Horizon UI Tailwind CSS React PRO](https://i.ibb.co/d0cVzKB/horizon-ui-pro-tailwind.png)](https://www.horizon-ui.com/pro?ref=readme-horizon-tailwind-react) |
-
-### Figma Version
-
-Horizon UI is available in Figma format as well! Check it out on Figma
-Community! 🎨
-[See the Horizon UI Figma design files](https://bit.ly/horizon-figma)
-
-### Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Horizon UI. Here are
-some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Horizon UI Dashbaord.
-   Check the CHANGELOG from your dashboard on our
-   [CHANGE LOG File](https://github.com/horizon-ui/horizon-tailwind-react/blob/main/CHANGELOG.md?ref=readme-horizon-tailwind-react).
-2. Providing us reproducible steps for the issue will shorten the time it takes
-   for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you
-   encountered the issue might help.
+No need to build everything from scratch. Use this to save time, reduce boilerplate, and deliver sleek UIs faster.
 
 ---
 
-### Community
+### 🌟 Features
 
-Connect with the community! Feel free to ask questions, report issues, and meet new people that already use Horizon UI!
+- ⚛ Built with **React + TypeScript**
+- 💨 Styled using **Tailwind CSS**
+- 📋 Includes pages like: Dashboard, Doctors, Patients, Settings, and Emergency Card
+- 🧩 Modular & reusable components
+- 📱 Fully responsive on all screen sizes
+- 💡 Designed with real-world hospital workflows in mind
 
-💬 [Join the #HorizonUI Discord Community!](https://discord.gg/f6tEKFBd4m)
+---
 
-### Copyright and license
+### 🧪 Demo Pages
 
-⭐️ [Copyright 2023 Horizon UI ](https://www.horizon-ui.com/?ref=readme-horizon-tailwind-react)
+Check out some example views included in the project:
 
-📄 [Horizon UI License](https://www.simmmple.com/licenses?ref=readme-horizon-tailwind-react)
+- 👨‍⚕️ Doctors Management
+- 🧑‍🤝‍🧑 Patients List
+- 🏥 Hospital Settings Panel
+- 🚑 Emergency Doctor Call Card
+- 📊 Dashboard Analytics
+
+---
+
+### 📦 Quick Start
+
+> Requires **NodeJS LTS** version
+
+1. Clone the project:
+
+```bash
+git clone https://github.com/BINOD-KUMAR-SAMAL-890123/Docters_LOVE_UI_Dashboard.git
+cd Docters_LOVE_UI_Dashboard
