@@ -4,11 +4,13 @@
 
 <p>&nbsp;</p>
 
-[<img alt="Doctors LOVE UI Dashboard" src="https://i.ibb.co/VWyD9sp/doctor-dashboard-banner.png" />](https://github.com/BINOD-KUMAR-SAMAL-890123/Docters_LOVE_UI_Dashboard)
+[<img alt="Doctors LOVE UI Dashboard" src="https://i.ibb.co/VWyD9sp/doctor-dashboard-banner.png" />](https://docters-love-ui-dashboard.onrender.com)
 
 <p>&nbsp;</p>
 
-Start building modern, responsive hospital dashboards and healthcare UIs with **Doctors LOVE UI Dashboard**, a beautifully designed React + Tailwind CSS admin panel made for hospitals, clinics, and patient management.
+## 🚀 Live Demo
+
+👉 **Check it out here**: [https://docters-love-ui-dashboard.onrender.com](https://docters-love-ui-dashboard.onrender.com)
 
 ---
 
